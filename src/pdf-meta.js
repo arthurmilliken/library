@@ -1,9 +1,6 @@
 import { readFile } from "fs/promises";
 import { PDFDocument } from "pdf-lib";
 
-const FILE_PATH =
-  "W:\\ARTHUR\\Media\\DoomsdayAlexandria\\Annie Besant - Esoteric Christianity.pdf";
-
 export async function readPdfMeta(fpath) {
   const buf = await readFile(fpath);
   const doc = await PDFDocument.load(buf, { updateMetadata: false });
@@ -19,5 +16,3 @@ export async function readPdfMeta(fpath) {
   };
   console.log({ meta });
 }
-
-readPdfMeta(FILE_PATH);

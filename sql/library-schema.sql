@@ -81,10 +81,29 @@ CREATE TABLE PDF (
   Modified TEXT
 );
 CREATE INDEX idx_PDF_Title ON PDF(Title);
-CREATE INDEX idx_PDF_Author ON PDF(Author);
+CREATE INDEX idx_PDF_Author ON PDF(Author, Title);
 CREATE INDEX idx_PDF_Subject ON PDF(Subject, Title);
 CREATE INDEX idx_PDF_Creator ON PDF(Creator, Title);
 CREATE INDEX idx_PDF_Keywords ON PDF(Keywords);
 CREATE INDEX idx_PDF_Producer ON PDF(Producer, Title);
 CREATE INDEX idx_PDF_Created ON PDF(Created);
 CREATE INDEX idx_PDF_Modified ON PDF(Modified);
+
+CREATE TABLE EPUB (
+  SHA256 TEXT NOT NULL PRIMARY KEY,
+  Title TEXT,
+  Creator TEXT,
+  CreatorFileAs TEXT,
+  Date TEXT,
+  Language TEXT,
+  Publisher TEXT,
+  Cover TEXT,
+  JSON TEXT
+);
+CREATE INDEX idx_EPUB_Title ON EPUB(Title);
+CREATE INDEX idx_EPUB_Creator ON EPUB(Creator, Title);
+CREATE INDEX idx_EPUB_CreatorFileAs ON EPUB(CreatorFileAs, Title);
+CREATE INDEX idx_EPUB_Date ON EPUB(Date, Title);
+CREATE INDEX idx_EPUB_Language ON EPUB(Language);
+CREATE INDEX idx_EPUB_Publisher ON EPUB(Publisher);
+CREATE INDEX idx_EPUB_Cover ON EPUB(Cover);

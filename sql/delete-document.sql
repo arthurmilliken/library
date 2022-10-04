@@ -1,0 +1,1 @@
+DELETE FROM Documents WHERE Path = ?;

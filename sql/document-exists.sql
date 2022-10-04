@@ -1,0 +1,1 @@
+SELECT count(Path) as count FROM Documents WHERE Path = ?;

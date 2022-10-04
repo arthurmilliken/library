@@ -8,6 +8,9 @@
     "start": "node .",
     "create-db": "node src/create-db.js",
     "pdf-meta": "node src/pdf-meta.js",
+    "epub-meta": "node src/epub-meta.js",
+    "delete-paths": "node src/delete-paths.js",
+    "populate-epub": "node src/populate-epub.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +25,7 @@
   "homepage": "https://github.com/arthurmilliken/library#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "epub": "^1.2.1",
     "file-type": "^18.0.0",
     "node-dir": "^0.1.17",
     "pdf-lib": "^1.17.1",
